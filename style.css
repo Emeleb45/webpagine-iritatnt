@@ -1,0 +1,171 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+.gridcontainer {
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 10vw repeat(2, 10vw) 20vw 50vw;
+    grid-template-rows: 10vh 60vh 30vh;
+    background-color: #ff000000;
+}
+.grid-item {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: #ffffff;
+}
+.item1, .item3, .item4 {
+    grid-column: span 4;
+    text-align: left;
+    margin-left: 15%;
+}
+.item1 {
+    grid-row: 1;
+}
+
+.item2 {
+    display: flex;
+    grid-column: span 1;
+    grid-row: span 3;
+    background-color: #C52146;
+    align-items: center;
+    justify-content: center;
+}
+
+.item2 div img {
+    display: block;
+    max-height: 87.5vh;
+    width: auto;
+}
+.iphonescreen {
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 78%; 
+    height: 71%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    box-sizing: border-box;
+}
+.iphonescreen video{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+
+  
+.item3 {
+    grid-row: 2;
+}
+
+.item4 {
+    grid-row: 3;
+}
+
+.Title {
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.Text {
+    font-size: 1.5vw;
+}
+
+.item4 button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: crosshair;
+    color: transparent;
+}
+
+.item4 button img {
+    transition: transform 0.3s;
+}
+
+.item4 button:hover img {
+    transform: scale(1.1);
+}
+
+.item4 p {
+    font-size: 1.0vw;
+    margin-top: 50px;
+    color: rgb(35, 35, 35);
+}
+
+
+.item2cont {
+    position: relative;
+    display: inline-block;
+  }
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+    .gridcontainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .item1, .item2, .item3, .item4 {
+        grid-column: span 1;
+        margin-left: 0;
+    }
+    .Title {
+        font-size: 10vw; 
+    }
+
+    .Text {
+        font-size: 6vw; 
+    }
+
+    .item4 p {
+        font-size: 6vw;
+    }
+}
+@media only screen and (max-width: 1024px) and (max-height: 1366px),
+only screen and (max-width: 912px) and (max-height: 1368px),
+only screen and (max-width: 768px) and (max-height: 1024px)  {
+    
+    
+    body {
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+
+    .gridcontainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .item1, .item2, .item3, .item4 {
+        grid-column: span 1;
+        margin-left: 0;
+    }
+
+    .Title {
+        font-size: 8vw; 
+    }
+
+    .Text {
+        font-size: 4vw; 
+    }
+
+    .item4 p {
+        font-size: 4vw; 
+    }
+}

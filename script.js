@@ -74,5 +74,5 @@ function moveButton(buttonId) {
 
 function bob() {
   document.querySelector('.overlay-image').style.display = 'block';
-
+  //alertt as8yed8ywefy
 }

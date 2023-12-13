@@ -71,3 +71,8 @@ function moveButton(buttonId) {
     button.style.transform = `translate3d(${newPosition.x}px, ${newPosition.y}px, 0)`
   }
 }
+
+function bob() {
+  document.querySelector('.overlay-image').style.display = 'block';
+
+}

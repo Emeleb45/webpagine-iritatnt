@@ -71,10 +71,43 @@ function moveButton(buttonId) {
     button.style.transform = `translate3d(${newPosition.x}px, ${newPosition.y}px, 0)`
   }
 }
+var oogwaydebounce = false
+var imgElement = ""
+var bobaudo = ""
 
-function bob() {
-  document.querySelector('.overlay-image').style.display = 'block';
-  var bob = new Audio('sounds/Hans Zimmer - Oogway Ascends Kung Fu Panda Soundtrack.mp3')
-  bob.volume = 1.0
-  bob.play();
+function oogwayshow() {
+  if (!oogwaydebounce) {
+    oogwaydebounce = true
+    var imagePath = 'imgs/oogway.jpg'
+    imgElement = document.createElement('img')
+    imgElement.src = imagePath
+    imgElement.id = 'oogwayimg'
+    document.body.appendChild(imgElement)
+    if (!bobaudo){
+      bobaudo = new Audio('sounds/oogway.mp3')
+      bobaudo.loop = true
+      bobaudo.volume = 1.0
+      bobaudo.play()
+    }
+    else {
+      bobaudo.volume = 1.0
+    }
+
+
+    setTimeout(function () {
+      oogwaydebounce = false
+      oogwayleave()
+    }, 5000);
+  }
+}
+
+function oogwayleave() {
+  if (!oogwaydebounce) {
+    oogwaydebounce = true
+    bobaudo.volume = 0
+    document.body.removeChild(oogwayimg)
+    setTimeout(function () {
+      oogwaydebounce = false
+    }, 1000)
+  }
 }

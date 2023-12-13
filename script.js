@@ -82,15 +82,19 @@ function oogwayshow() {
     imgElement = document.createElement('img')
     imgElement.src = imagePath
     imgElement.id = 'oogwayimg'
+    imgElement.style.opacity = 0
+    imgElement.style.animation = "elmFadein 1s ease forwards"
     document.body.appendChild(imgElement)
     if (!bobaudo){
       bobaudo = new Audio('sounds/oogway.mp3')
       bobaudo.loop = true
-      bobaudo.volume = 1.0
+      bobaudo.volume = 0
+      bobaudo.style.transition = "volume 2s ease"
+      bobaudo.volume = 1
       bobaudo.play()
     }
     else {
-      bobaudo.volume = 1.0
+      bobaudo.volume = 1
     }
 
 
@@ -105,7 +109,11 @@ function oogwayleave() {
   if (!oogwaydebounce) {
     oogwaydebounce = true
     bobaudo.volume = 0
-    document.body.removeChild(oogwayimg)
+    imgElement.style.opacity = 1
+    imgElement.style.animation = "elmFadeout 1s ease forwards"
+    setTimeout(function () {
+      document.body.removeChild(oogwayimg)
+    }, 1000)
     setTimeout(function () {
       oogwaydebounce = false
     }, 1000)

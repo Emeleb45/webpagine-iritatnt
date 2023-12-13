@@ -74,5 +74,7 @@ function moveButton(buttonId) {
 
 function bob() {
   document.querySelector('.overlay-image').style.display = 'block';
-  //alertt as8yed8ywefy
+  var bob = new Audio('sounds/Hans Zimmer - Oogway Ascends Kung Fu Panda Soundtrack.mp3')
+  bob.volume = 1.0
+  bob.play();
 }
